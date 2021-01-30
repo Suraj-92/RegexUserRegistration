@@ -74,6 +74,12 @@ public class regex {
          System.out.println("Password is not valid...");
    }
 
+	public void emailSamples(){
+		Pattern pat4 = Pattern.compile("^(?:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*)[^\\s]{8,}$");
+		Matcher match4 = pat4.matcher("Suraj@922");
+		boolean result4 = match4.matches(); 
+		System.out.println(result4);
+	}
 	
 	public static void main(String[] args) {
 		regex regex = new regex();
@@ -82,6 +88,7 @@ public class regex {
 		regex.email();
 		regex.mobileNumber();
 		regex.passwordMinimumEightCharacter();
+		regex.emailSamples();
 	}
 
 }
